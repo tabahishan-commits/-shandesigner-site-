@@ -1,0 +1,114 @@
+<!--
+Single-file responsive HTML template for "Shan Designer" — a small business landing page you can use when registering / logging into PhonePe Business.
+INSTRUCTIONS:
+1) Replace PLACEHOLDERS: BUSINESS_NAME, BUSINESS_TAGLINE, CONTACT_PHONE, SUPPORT_EMAIL, LOGO_TEXT, HERO_BG_URL, ABOUT_TEXT, SERVICES_LIST (as <li>), GALLERY_IMAGES (comma separated URLs) and SOCIAL_LINKS.
+2) Host as a single HTML file on GitHub Pages / Netlify / Vercel. Use the published URL as your "website" when signing up for PhonePe Business.
+3) The "PhonePe Business" button points to the official PhonePe Business portal for easy access. This page is only a business landing page — it does NOT log you into PhonePe.
+-->
+
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shan Designer — Creative Graphics & Design</title>
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;background:linear-gradient(180deg,#071428 0%, #0f172a 100%);color:#e6eef6}
+    .wrap{max-width:1080px;margin:18px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;color:#041125}
+    h1{margin:0;font-size:20px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:12px}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
+    .card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px}
+    .hero-left h2{margin:6px 0 8px;font-size:28px}
+    .muted{color:var(--muted)}
+    .cta{display:flex;gap:10px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .primary{background:linear-gradient(90deg,var(--accent),#4f46e5);color:#041125}
+    .outline{border:1px solid rgba(255,255,255,0.08);color:var(--muted);background:transparent}
+    .qr{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .qr img{width:220px;height:220px;object-fit:cover;border-radius:12px;background:#fff;padding:6px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .service{padding:14px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SD</div>
+        <div>
+          <h1>Shan Designer</h1>
+          <div class="muted">Creative graphics • Thumbnails • Social Media</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#work">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="card hero-left">
+        <h2>Professional design for your YouTube & Social posts</h2>
+        <p class="muted">Main thumbnails, channel art, logo, and branding packages. Fast turnaround for small businesses and creators.</p>
+
+        <div class="cta">
+          <a class="btn primary" href="mailto:SUPPORT_EMAIL">Get a Quote</a>
+          <a class="btn outline" href="#contact">Contact</a>
+        </div>
+
+        <div class="grid-3" id="services" style="margin-top:16px">
+          <div class="service">
+            <strong>Thumbnails</strong>
+            <div class="muted">Attention-grabbing thumbnails for YouTube.</div>
+          </div>
+          <div class="service">
+            <strong>Channel Art</strong>
+            <div class="muted">Complete channel banners & logos.</div>
+          </div>
+          <div class="service">
+            <strong>Social Assets</strong>
+            <div class="muted">Instagram/Reel posts & story templates.</div>
+          </div>
+        </div>
+
+        <section id="work" style="margin-top:16px">
+          <h3 style="margin:8px 0">Recent work</h3>
+          <div class="muted">Sample thumbnails and quick mockups available on request. Mention your budget and platform.</div>
+        </section>
+      </section>
+
+      <aside class="card qr">
+        <h3 style="margin:0">Payments & PhonePe</h3>
+        <p class="muted">Use the official PhonePe Business portal to manage merchant settings and settlements.</p>
+        <a class="btn primary" href="https://business.phonepe.com/" target="_blank" rel="noopener">Open PhonePe Business</a>
+
+        <div style="margin-top:14px">
+          <strong>Phone</strong>
+          <div class="muted">CONTACT_PHONE</div>
+          <strong style="margin-top:8px;display:block">Email</strong>
+          <div class="muted">SUPPORT_EMAIL</div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="card" id="contact" style="margin-top:18px">
+      <h3 style="margin-top:0">Contact & Booking</h3>
+      <p class="muted">Message on WhatsApp or email to book your design slot.</p>
+      <p class="muted"><strong>WhatsApp / Call:</strong> CONTACT_PHONE • <strong>Email:</strong> SUPPORT_EMAIL</p>
+      <p class="muted">Website URL (use this file's hosted link) can be used while registering for PhonePe Business as your business website.</p>
+    </section>
+
+    <footer>© <span id="year"></span> Shan Designer — Created for small creators and shops</footer>
+  </div>
+  <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
+</body>
+</html>
